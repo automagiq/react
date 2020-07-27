@@ -49,9 +49,9 @@ function App() {
     <div>
       <Header />
       <br />
-      <button onClick={add}> Plus One </button>&nbsp;&nbsp;
+      <button onClick={add}> Plus One+1+ </button>&nbsp;&nbsp;
       {count}&nbsp;&nbsp;
-      <button onClick={minus}> Minus One</button>
+      <button onClick={minus}> Minus One-1-</button>
 
       <br />
       <button onClick={add10}> Plus Ten </button>&nbsp;&nbsp;
