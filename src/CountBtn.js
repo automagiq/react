@@ -10,9 +10,7 @@ export default function CountBtn(props) {
   const send = () => {
     props.updateCounter(props.value + props.count123)
   }
-  // const send2 = () => {
-  //   props.updateCounter(props.value2 + props.count12)
-  // }
+
 
 
   return (
