@@ -33,7 +33,7 @@ function App() {
     <div className="App">
 
 
-      <strong>Счетчик</strong>
+      <strong>Счетчик 1</strong>
       <br />
 
       <CountBtn value={-3} count123={count} updateCounter={updateCounter} send={send} />
@@ -44,17 +44,17 @@ function App() {
       <CountBtn value={+2} count123={count} updateCounter={updateCounter} send={send} />
       <CountBtn value={+3} count123={count} updateCounter={updateCounter} send={send} />
       <hr />
-
-      <CountBtn value2={-3} count12={count2} updateCounter={updateCounter2} send={send} />
-      <CountBtn value2={-2} count12={count2} updateCounter={updateCounter2} send={send} />
-      <CountBtn value2={-1} count12={count2} updateCounter={updateCounter2} send={send} />
+      <strong>Счетчик 2</strong>
+      <CountBtn value={-3} count123={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value={-2} count123={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value={-1} count123={count2} updateCounter={updateCounter2} send={send} />
       {count2}
-      <CountBtn value2={+1} count12={count2} updateCounter={updateCounter2} send={send} />
-      <CountBtn value2={+2} count12={count2} updateCounter={updateCounter2} send={send} />
-      <CountBtn value2={+3} count12={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value={+1} count123={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value={+2} count123={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value={+3} count123={count2} updateCounter={updateCounter2} send={send} />
       <hr />
 
-
+      <strong> Динамичые Счетчики</strong>
       <CountBtn count={3} />
       <CountBtn count={8} />
 
