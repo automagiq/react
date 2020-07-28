@@ -1,72 +1,66 @@
-import React, { useState } from "react";
-import Header from './Header';
-import Footer from './Footer';
-//import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from 'react';
+
+import CountBtn from './CountBtn'
+import './App.css';
 
 function App() {
-  //let counter;
 
-  const menu = ['Orders', 'Customers', 'Delivery']
-  const [count, setCount] = useState(0);
-  const [count10, setCount10] = useState(0);
-  const [RandomNum, setCounterRandom] = useState(0);
+  const [counters, setCounters] = useState([
 
-  const getRandomNum = max => {
-    return Math.floor(Math.random() * Math.floor(max));
-  };
-  const increaseRandom = () => {
-    return setCounterRandom(RandomNum + getRandomNum(10));
+    4, 11, 34
+
+  ])
+
+  const [count, setCount] = useState(100);
+  const [count2, setCount2] = useState(5);
+
+  const updateCounter = (n) => {
+    console.log('updated Counter', n, count)
+    setCount(n);
+  }
+  const updateCounter2 = (n) => {
+    console.log('updated Counter', n, count2)
+    setCount2(n);
   }
 
-  const descreaseRandom = () => {
-    return setCounterRandom(RandomNum - getRandomNum(10));
+  const send = () => {
+    console.log('Clicked on Mouse')
   }
-
-  const clearAll = () => {
-    setCount(0);
-    setCount10(0);
-    setCounterRandom(0);
-  }
-  const add = () => {
-    setCount(count + 1);
-  };
-
-  const minus = () => {
-    setCount(count - 1);
-  };
-
-  const add10 = () => {
-    setCount10(count10 + 10);
-  };
-
-  const minus10 = () => {
-    setCount10(count10 - 10);
-  };
 
   return (
 
-    <div>
-      <Header />
+
+    <div className="App">
+
+
+      <strong>Счетчик</strong>
       <br />
-      <button onClick={add}> Plus One+1+ </button>&nbsp;&nbsp;
-      {count}&nbsp;&nbsp;
-      <button onClick={minus}> Minus One-1-</button>
 
-      <br />
-      <button onClick={add10}> Plus Ten </button>&nbsp;&nbsp;
-      {count10}
-      <button onClick={minus10}> Minus Ten</button>
-      <br />
-      <button onClick={descreaseRandom}>Minus Random Number</button>&nbsp;&nbsp;
-      <strong>{RandomNum}</strong>&nbsp;&nbsp;
-      <button onClick={increaseRandom}>Plus Random Number</button>
-
-
-
+      <CountBtn value={-3} count123={count} updateCounter={updateCounter} send={send} />
+      <CountBtn value={-2} count123={count} updateCounter={updateCounter} send={send} />
+      <CountBtn value={-1} count123={count} updateCounter={updateCounter} send={send} />
+      {count}
+      <CountBtn value={+1} count123={count} updateCounter={updateCounter} send={send} />
+      <CountBtn value={+2} count123={count} updateCounter={updateCounter} send={send} />
+      <CountBtn value={+3} count123={count} updateCounter={updateCounter} send={send} />
       <hr />
-      <button onClick={clearAll}>Reset</button>
-      <Footer menu={menu} />
+
+      <CountBtn value2={-3} count12={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value2={-2} count12={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value2={-1} count12={count2} updateCounter={updateCounter2} send={send} />
+      {count2}
+      <CountBtn value2={+1} count12={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value2={+2} count12={count2} updateCounter={updateCounter2} send={send} />
+      <CountBtn value2={+3} count12={count2} updateCounter={updateCounter2} send={send} />
+      <hr />
+
+
+      <CountBtn count={3} />
+      <CountBtn count={8} />
+
+      {counters.map(el => <CountBtn count={el} key={el} />)}
+
+      <button>Add Counter</button>
 
     </div>
   );
